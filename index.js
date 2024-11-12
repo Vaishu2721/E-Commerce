@@ -1,18 +1,12 @@
-// function to slide the images in the home page
-let slideIndex = 0;
-let imageslide = document.querySelectorAll('.slide');
-const imagesPerSlide = 4; 
+// let index = 0;
+// let images = document.querySelectorAll('.slideimage');
 
-function showImages() {
-    imageslide.forEach((image) => {
-        image.classList.remove("active");
-    });
+// function slideImages() {
+//     images.forEach((image) => {
+//         image.classList.remove("active");
+//     });
 
-    for (let i = 0; i < imagesPerSlide; i++) {
-        const currentIndex = (slideIndex + i) % imageslide.length;
-        imageslide[currentIndex].classList.add("active");
-    }
-    slideIndex = (slideIndex + imagesPerSlide) % imageslide.length;
-}
-
-setInterval(showImages, 3000);
+//     index = (index + 1) % images.length;
+//     images[index].classList.add("active");
+// }
+// setInterval(slideImages, 1000);
