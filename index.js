@@ -1,7 +1,6 @@
 let index = 0;
 let images = document.querySelectorAll('.slideimage');
 
-
 //function to slide images in the home page
 function slideImages() {
     images.forEach((image) => {
@@ -22,39 +21,29 @@ function showContact(){
         contactDetails.style.display = "none"; // Hide the contact info
     }
 }
-
-
-// Initialize an empty array to hold cart items
+// Get cart items from localStorage
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-// Function to add item to cart and update cart display
 function addToCart(event) {
-    // Find the closest product div from the button clicked
     const productElement = event.target.closest('.product');
-    
-    // Get product details
     const productName = productElement.querySelector('.productName').innerText;
     const productPrice = productElement.querySelector('.productPrice').innerText;
     const quantityInput = productElement.querySelector('.productQuantity');
-    const productQuantity = parseInt(quantityInput.value) || 1; 
-    const productImage = productElement.querySelector('.productImg').src;// default to 1 if empty
-    
-    // Create an object for the product
+    const productQuantity = parseInt(quantityInput.value) || 1;
+    const productImage = productElement.querySelector('.productImg').src; // Get the product image URL
+
     const cartItem = {
         name: productName,
         price: productPrice,
         quantity: productQuantity,
-        image: productImage
+        image: productImage  // Store the image URL
     };
 
-    // Add the item to the cart array
     cart.push(cartItem);
-    localStorage.setItem('cart', JSON.stringify(cart));
-    // Update the cart display
+    localStorage.setItem('cart', JSON.stringify(cart)); // Save updated cart in localStorage
     updateCartDisplay();
 }
 
-// Function to display items in the cart
 function updateCartDisplay() {
     const cartContainer = document.querySelector('.cart-container');
     
@@ -70,17 +59,12 @@ function updateCartDisplay() {
         `;
         cartContainer.appendChild(cartItemElement);
     });
-    
-    // Update the cart count in the navbar
-    const cartCount = document.querySelector('.count sup');
-    cartCount.textContent = cart.length;
 }
 
 // Attach event listeners to "Add to Cart" buttons
 document.querySelectorAll('.addProduct').forEach(button => {
     button.addEventListener('click', addToCart);
 });
-
 
 function displayCartItems() {
     const cartItemsContainer = document.getElementById('cartItems');
@@ -110,16 +94,3 @@ function displayCartItems() {
 
 // Display cart items on page load
 displayCartItems();
-
-
-function updateCartDisplay() {
-    const cartCount = document.querySelector('.count sup');
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    cartCount.textContent = cart.length;
-}
-
-// Call updateCartDisplay on page load to set the initial count
-updateCartDisplay();
-
-
-

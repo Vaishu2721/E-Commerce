@@ -247,3 +247,32 @@
 .addProduct:active{
     background-color: #7e3905;
 }
+.cart-container {
+    padding: 10px;
+    margin: 20px;
+    max-width: 500px;
+}
+
+
+.cardItems{
+    padding: 10px 30px;
+    margin:10px;
+}
+
+.cart-item{
+    margin:10px;
+    border: 2px solid;
+    width: 250px;
+    display: flex;
+    border-radius: 10px;
+    box-shadow: -3px 1px 19px -3px rgba(0,0,0,0.52)
+}
+
+.cart-item-image{
+    width: 100px;
+    height:100px;
+}
+.cart-item-details{
+    margin-left: 50px;
+    margin-top: 20px;
+}
