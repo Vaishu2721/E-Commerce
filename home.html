@@ -14,10 +14,10 @@
         <div class="logo"><img src="images/logo.jpeg" alt=""></div>
         <p>Welcome to Mart</p>
         <ul class="menu">
-            <li class="item">Home</li>
-            <li class="item">Products</li>
-            <li class="item">Contact</li>
-            <li class="item"><span><i class="fa-solid fa-cart-shopping"></i></span></li>
+            <li class="item"><a href="home.html">Home</a></li>
+            <li class="item"><a href="products.html">Products</a></li>
+            <li class="item"><a href="#fotter">Contact</a></li>
+            <li class="item"><a href=""><span class="count"><i class="fa-solid fa-cart-shopping"></i></span></a></li>
         </ul>
     </div>
     <div class="slideimages">
@@ -49,6 +49,25 @@
                 <p>Dry Fruits</p>
             </div>
         </div>
+    </div>
+
+    <div class="fotter" id="fotter">
+        <p class="title">Customer Services</p>
+        <ul class="services">
+            <div class="list">
+                <li class="service" id="contact" onclick="showContact()">Contact Us</li>
+                <div class="contactDetails" id="contactDetails">
+                    <p><span><i class="fa-solid fa-phone"></i></span>+20-7643751379</p>
+                    <p><a href=" mailto:xyz@gmail.com "><i class="fa-solid fa-envelope"></i>xyz@gmail.com</a></p>
+                </div>
+                <li class="service">Delivery Information</li>
+            </div>
+            <div class="list">
+                <li class="service">Queries</li>
+                <li class="service">Terms of Services</li>
+            </div>
+
+        </ul>
     </div>
     <script src="index.js"></script>
 </body>
